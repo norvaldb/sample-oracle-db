@@ -1,0 +1,16 @@
+services:
+  my-oracle-db:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-oracle-db-container
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+    environment:
+      - ORACLE_PWD=Some1New#123
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+
+volumes:
+  oracle_data:
