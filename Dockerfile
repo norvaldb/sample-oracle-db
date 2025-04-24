@@ -3,7 +3,7 @@ FROM container-registry.oracle.com/database/enterprise:19.3.0.0
 
 # Set the environment variables
 ENV ORACLE_HOME=/opt/oracle/product/19c/dbhome_1
-ENV ORACLE_SID=ORCLCDB
+ENV ORACLE_SID=ORCLCDBPDB1
 ENV ORACLE_PWD=Some1New#123
 ENV ORACLE_VERSION=19.3.0
 ENV ORACLE_VERSION_SHORT=19.3

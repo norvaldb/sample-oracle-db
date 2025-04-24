@@ -1,5 +1,6 @@
 -- Note: This script assumes it's run by a user with privileges to create users and grant permissions (like SYS or SYSTEM).
 -- The Docker entrypoint script might need to handle connecting as the appropriate user.
+-- The init.sh script handles setting the container session.
 
 -- Create the user
 CREATE USER booklib_user IDENTIFIED BY booklib_password;
