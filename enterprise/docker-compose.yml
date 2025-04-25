@@ -1,0 +1,23 @@
+services:
+  enterprisedb:
+    image: container-registry.oracle.com/database/enterprise:19.3.0.0
+    ports:
+      - 1521:1521
+    volumes:
+      - ./scripts:/opt/oracle/scripts/startup
+      - enterprise_db_volume:/opt/oracle/oradata
+    environment:
+      - ORACLE_PWD=enterprisedbadmin
+      - ORACLE_CHARACTERSET=AL32UTF8
+      - ORACLE_PDB=ENTERPRISEPDB1
+      - LOCAL_DB_USER=TEST_USER
+      - LOCAL_DB_USER_PWD=local1Psw0rd
+    networks:
+      - local_network
+
+volumes:
+  enterprise_db_volume:
+
+networks:
+  local_network:
+    external: true
