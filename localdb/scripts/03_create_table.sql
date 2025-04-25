@@ -1,5 +1,6 @@
--- Note: This script assumes it's run by the 'booklib_user'.
--- The Docker entrypoint script might need to handle switching users or connecting as booklib_user.
+WHENEVER SQLERROR EXIT SQL.SQLCODE;
+ALTER SESSION SET CONTAINER = FREEPDB1;
+ALTER SESSION SET CURRENT_SCHEMA = TEST_USER;
 
 -- Authors Table
 CREATE TABLE authors (
@@ -26,6 +27,8 @@ CREATE TABLE books (
     CONSTRAINT fk_books_author FOREIGN KEY (author_id) REFERENCES authors(author_id),
     CONSTRAINT fk_books_genre FOREIGN KEY (genre_id) REFERENCES genres(genre_id)
 );
+
+COMMIT;
 
 -- Exit SQL*Plus (optional)
 -- EXIT;

@@ -1,4 +1,5 @@
--- Note: Assumes connection as 'booklib_user'.
+ALTER SESSION SET CONTAINER = FREEPDB1;
+ALTER SESSION SET CURRENT_SCHEMA = TEST_USER;
 
 -- Insert Sample Authors
 INSERT INTO authors (first_name, last_name, birth_date) VALUES ('George', 'Orwell', DATE '1903-06-25');
